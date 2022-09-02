@@ -3,29 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using LSW.Events;
+using LSW.UI;
 
-public class ItemTemplate : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ItemTemplate : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    [SerializeField] //remove the attribute in the end
-    Item item = null;
+    protected Item item = null;
+    protected int inventoryId = -1;
     [SerializeField]
-    Image image = null;
+    protected Image image = null;
+    [SerializeField]
+    protected GameEvent eventShowItemDetails = null;
+    [SerializeField]
+    protected GameEvent eventHideItemDetails = null;
+    [SerializeField]
+    protected GameEvent eventClickedOnItemTemplate = null;
 
     public Item _Item { get => item; }
 
-    public void FillItem(Item i)
+    public virtual void InitializeItemTemplate(Item i, int id = -1)
     {
-        item = i;
-        image.sprite = i._Sprite;
+        if(i != null)
+        {
+            item = i;
+            image.sprite = i._Sprite;
+            inventoryId = id;
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            item = null;
+            image.sprite = null;
+            inventoryId = id;
+            gameObject.SetActive(false);
+        }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(item._Description);
+        Debug.Log("Equipar item");
+        eventClickedOnItemTemplate.Raise(item, inventoryId, InventoryType.Simple);
+    }
+
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        eventShowItemDetails.Raise(item, InventoryType.Simple);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //remove description;
+        eventHideItemDetails.Raise();
     }
 }

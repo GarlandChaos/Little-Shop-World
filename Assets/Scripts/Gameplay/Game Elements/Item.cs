@@ -11,12 +11,15 @@ public class Item : ScriptableObject
     [TextArea]
     string description = string.Empty;
     [SerializeField]
-    int price = 0;
+    int buyPrice = 0;
+    [SerializeField]
+    int sellPrice = 0;
     [SerializeField]
     Sprite sprite = null;
 
     public string _Name { get => itemName; }
     public string _Description { get => description; }
-    public int _Price { get => price; }
+    public int _BuyPrice { get => buyPrice; }
+    public int _SellPrice { get => sellPrice; }
     public Sprite _Sprite { get => sprite; }
 }

@@ -89,5 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e6dada5208fb6d41b6c5a9c84ac1d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
   image: {fileID: 2430638773424012058}
+  eventShowItemDetails: {fileID: 11400000, guid: 2d86473f529043c448d599d2401fefa2, type: 2}
+  eventHideItemDetails: {fileID: 11400000, guid: 1813cd1e0a207814c95cf87ff8b7b501, type: 2}
+  eventClickedOnItemTemplate: {fileID: 11400000, guid: 935cca0c170980745904d92ba854e346, type: 2}

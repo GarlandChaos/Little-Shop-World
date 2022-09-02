@@ -1,46 +1,79 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace LSW.UI
 {
-    public class InventoryScreenController : ADialogController
+    public class InventoryScreenController : APanelController
     {
+        protected List<ItemTemplate> itemTemplates = new List<ItemTemplate>();
         [SerializeField]
-        List<ItemTemplate> itemTemplates = new List<ItemTemplate>();
+        protected RectTransform itemContainer = null;
         [SerializeField]
-        RectTransform itemContainer = null;
+        protected ItemTemplate itemTemplatePrefab = null;
         [SerializeField]
-        ItemTemplate itemTemplatePrefab = null;
+        protected TMP_Text textFunds = null;
+        [SerializeField]
+        protected Inventory inventory = null;
 
-        //TEMPORARY
-        [SerializeField]
-        ItemList temporaryInventoryItemList = null;
-
-        //TEMPORARY
-        private void Start()
+        private void Awake()
         {
-            foreach (Item i in temporaryInventoryItemList._ItemList)
-                AddItem(i);
+            inventory = Instantiate(inventory);
         }
 
-        public void AddItem(Item item)
+        private void OnEnable()
         {
-            ItemTemplate template = Instantiate(itemTemplatePrefab, itemContainer, false);
-            template.FillItem(item);
-            itemTemplates.Add(template);
+            RefreshScreen();
         }
 
-        public void RemoveItem(Item item)
+        public void AddItemTemplate(Item item, int index)
+        {
+            if(index < itemTemplates.Count)
+            {
+                itemTemplates[index].InitializeItemTemplate(item, inventory._Id);
+            }
+            else
+            {
+                ItemTemplate template = Instantiate(itemTemplatePrefab, itemContainer, false);
+                template.InitializeItemTemplate(item, inventory._Id);
+                itemTemplates.Add(template);
+            }
+        }
+
+        public void RefreshScreen()
+        {
+            UpdateItemTemplates();
+            UpdateTextFunds();
+        }
+
+        void UpdateItemTemplates()
+        {
+            ClearItemTemplates();
+
+            int i = 0;
+            foreach (Item item in inventory.itemsList)
+            {
+                AddItemTemplate(item, i);
+                i++;
+            }
+        }
+
+        void UpdateTextFunds()
+        {
+            if (FundsManager.instance != null)
+                textFunds.text = "$" + FundsManager.instance._Funds.ToString();
+        }
+
+        public void ClearItemTemplates()
         {
             foreach(ItemTemplate template in itemTemplates)
-            {
-                if (template._Item == item)
-                {
-                    itemTemplates.Remove(template);
-                    Destroy(template);
-                }
-            }         
+                template.InitializeItemTemplate(null);
+        }
+
+        public void CloseScreen()
+        {
+            Hide();
         }
     }
 }

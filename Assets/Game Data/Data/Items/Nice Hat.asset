@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce996cc7046dd4b919319b748b13cf, type: 3}
+  m_Name: Nice Hat
+  m_EditorClassIdentifier: 
+  itemName: Nice Hat
+  description: A really nice hat.
+  buyPrice: 30
+  sellPrice: 15
+  sprite: {fileID: 21300000, guid: 7ffb9d9fefe2b4541a4fa94bd081bcf1, type: 3}

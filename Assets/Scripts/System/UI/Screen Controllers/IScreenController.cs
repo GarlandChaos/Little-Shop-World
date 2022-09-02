@@ -12,5 +12,5 @@
 
     public interface IDialogController : IScreenController { }
 
-    public interface ISpecialPanelController : IScreenController { }
+    public interface ISpecialController : IScreenController { }
 }

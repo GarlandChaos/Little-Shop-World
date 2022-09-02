@@ -17,7 +17,9 @@ namespace LSW.UI
             }
         }
 
-        //Don't call this function inside a dialog controller, make the dialog layer hide it
+        /// <summary>
+        /// ATTENTION: Don't call this function inside a dialog controller, make the dialog layer hide it
+        /// </summary>
         public virtual void Hide()
         {
             if (gameObject.activeSelf)

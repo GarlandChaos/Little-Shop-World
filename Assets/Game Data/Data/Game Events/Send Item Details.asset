@@ -9,9 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ce996cc7046dd4b919319b748b13cf, type: 3}
-  m_Name: Nice Hat
+  m_Script: {fileID: 11500000, guid: 2cc945346ea323b42a38febbe50c3143, type: 3}
+  m_Name: Send Item Details
   m_EditorClassIdentifier: 
-  itemName: Nice Hat
-  description: A really nice hat.
-  sprite: {fileID: 21300000, guid: 7ffb9d9fefe2b4541a4fa94bd081bcf1, type: 3}

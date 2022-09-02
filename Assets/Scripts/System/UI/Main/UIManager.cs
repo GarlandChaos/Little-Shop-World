@@ -16,6 +16,8 @@ namespace LSW.UI
         [SerializeField]
         DialogLayer dialogLayer = null;
         [SerializeField]
+        SpecialLayer specialLayer = null;
+        [SerializeField]
         Canvas mainCanvas = null;
         [SerializeField]
         Camera UICamera = null;
@@ -60,6 +62,13 @@ namespace LSW.UI
                         panelLayer.RegisterScreen(screen.name, panel, screenInstance.transform);
                         continue;
                     }
+
+                    ISpecialController specialPanel = screenController as ISpecialController;
+                    if (specialPanel != null)
+                    {
+                        specialLayer.RegisterScreen(screen.name, specialPanel, screenInstance.transform);
+                        continue;
+                    }
                 }
             }
         }
@@ -84,6 +93,13 @@ namespace LSW.UI
                     dialogLayer.ShowScreen(screenID);
                 else
                     dialogLayer.HideScreen(screenID);
+            }
+            else if (specialLayer.HasScreen(screenID))
+            {
+                if (open)
+                    specialLayer.ShowScreen(screenID);
+                else
+                    specialLayer.HideScreen(screenID);
             }
 #if UNITY_EDITOR
             else
@@ -111,6 +127,13 @@ namespace LSW.UI
                 else
                     dialogLayer.HideScreen(screenID);
             }
+            else if (specialLayer.HasScreen(screenID))
+            {
+                if (!specialLayer.IsScreenVisible(screenID))
+                    specialLayer.ShowScreen(screenID);
+                else
+                    specialLayer.HideScreen(screenID);
+            }
 #if UNITY_EDITOR
             else
                 Debug.LogError(screenID + " not found on any layer.");
@@ -129,6 +152,7 @@ namespace LSW.UI
         {
             panelLayer.ClearScreens();
             dialogLayer.ClearScreens();
+            specialLayer.ClearScreens();
         }
 
         public bool IsScreenVisible(string screenID)
@@ -137,6 +161,8 @@ namespace LSW.UI
                 return panelLayer.IsScreenVisible(screenID);
             else if (dialogLayer.HasScreen(screenID))
                 return dialogLayer.IsScreenVisible(screenID);
+            else if (specialLayer.HasScreen(screenID))
+                return specialLayer.IsScreenVisible(screenID);
 
             return false;
         }

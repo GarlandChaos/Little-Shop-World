@@ -59,6 +59,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8367369932718883482}
   - component: {fileID: 7741445312674578381}
+  - component: {fileID: 1495241415320627049}
+  - component: {fileID: 7657267608794284023}
+  - component: {fileID: 2721184395832315867}
+  - component: {fileID: 4497011848049194399}
+  - component: {fileID: 2817304280585151839}
   m_Layer: 5
   m_Name: UI Event Listener Controller
   m_TagString: Untagged
@@ -93,6 +98,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9dc197d04b0684ebf60058d17e4f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSendItemDetails: {fileID: 11400000, guid: f8898855bbcdc6043bca116fd4105deb, type: 2}
+  eventSendConfirmationMessageDetails: {fileID: 11400000, guid: 72f3b4f2272f8d54f9e4eb901f83bc25, type: 2}
+--- !u!114 &1495241415320627049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1813cd1e0a207814c95cf87ff8b7b501, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: HideItemDetails
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7657267608794284023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 141ae1e12de6a4a4fa8cc455c321458b, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: OpenShopBuyScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2721184395832315867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884d71f5fc429e44e982e2ac8d3aada4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2d86473f529043c448d599d2401fefa2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: ShowItemDetails
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4497011848049194399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0903c6d6a596f4a45bf5b50925891307, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: CloseConfirmationMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2817304280585151839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e106cba5f9ee4d74fb8089d2844fd19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 935cca0c170980745904d92ba854e346, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: ShowConfirmationMessage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2675808684335936907
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +307,55 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
+--- !u!1 &4252296540258760631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6716957777759648900}
+  - component: {fileID: 5570771537582092781}
+  m_Layer: 5
+  m_Name: Special Layer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6716957777759648900
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252296540258760631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5547765679205057686}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5570771537582092781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4252296540258760631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be254e1072cdb346a467aee41c83752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4773965124207820951
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +482,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: b35aa4bc471c8cc42b98b6f31df70c94, type: 2}
   panelLayer: {fileID: 1475420723336315461}
   dialogLayer: {fileID: 5200439193860605420}
+  specialLayer: {fileID: 5570771537582092781}
   mainCanvas: {fileID: 9050753352724080127}
   UICamera: {fileID: 3647290752556023585}
 --- !u!1 &7729404526744669228
@@ -370,6 +567,7 @@ RectTransform:
   m_Children:
   - {fileID: 3782551600189711637}
   - {fileID: 2844868959217079310}
+  - {fileID: 6716957777759648900}
   m_Father: {fileID: 6588873183743567962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

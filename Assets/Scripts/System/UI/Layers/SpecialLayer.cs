@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LSW.UI
 {
-    public class SpecialPanelLayer : ALayer<ISpecialPanelController>
+    public class SpecialLayer : ALayer<ISpecialController>
     {
         public override void SaySize()
         {

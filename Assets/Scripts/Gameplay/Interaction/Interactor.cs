@@ -7,6 +7,7 @@ public class Interactor : MonoBehaviour, IInteractor
     Vector3 direction = Vector3.zero; //check if need to be on the heap
     [SerializeField]
     LayerMask layerToInteract;
+    Transform transformCurrentHit = null;
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,15 @@ public class Interactor : MonoBehaviour, IInteractor
 
         if(hit.transform != null)
         {
-            hit.transform.GetComponent<Interactable>().Interact();
+            if(hit.transform != transformCurrentHit)
+            {
+                hit.transform.GetComponent<Interactable>().Interact();
+                transformCurrentHit = hit.transform;
+            }
+        }
+        else
+        {
+            transformCurrentHit = null;
         }
     }
 
