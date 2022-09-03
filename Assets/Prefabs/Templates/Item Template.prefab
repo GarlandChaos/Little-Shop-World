@@ -92,4 +92,4 @@ MonoBehaviour:
   image: {fileID: 2430638773424012058}
   eventShowItemDetails: {fileID: 11400000, guid: 2d86473f529043c448d599d2401fefa2, type: 2}
   eventHideItemDetails: {fileID: 11400000, guid: 1813cd1e0a207814c95cf87ff8b7b501, type: 2}
-  eventClickedOnItemTemplate: {fileID: 11400000, guid: 935cca0c170980745904d92ba854e346, type: 2}
+  eventClickedOnItemTemplate: {fileID: 11400000, guid: f095d01eb469dd74d98cae50fc8f47c9, type: 2}

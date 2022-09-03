@@ -17,3 +17,6 @@ MonoBehaviour:
   buyPrice: 30
   sellPrice: 15
   sprite: {fileID: 21300000, guid: 7ffb9d9fefe2b4541a4fa94bd081bcf1, type: 3}
+  bodyPartsList:
+  - {fileID: 11400000, guid: 75bdeda8065655043a56dd3191e4985a, type: 2}
+  - {fileID: 11400000, guid: e37a01f3e015d3449a3ed03bcdbab251, type: 2}

@@ -42,7 +42,7 @@ public class ItemTemplate : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Equipar item");
-        eventClickedOnItemTemplate.Raise(item, inventoryId, InfoType.Simple);
+        eventClickedOnItemTemplate.Raise(item);
     }
 
     public virtual void OnPointerEnter(PointerEventData eventData)
