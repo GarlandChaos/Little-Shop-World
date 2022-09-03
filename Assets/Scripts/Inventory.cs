@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using LSW.Events;
 
-public enum InventoryType
-{
-    Simple,
-    Buy,
-    Sell
-}
-
 public class Inventory : MonoBehaviour
 {
     int id = -1;
@@ -17,10 +10,10 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     ItemList initialItemsList = null;
     [SerializeField]
-    InventoryType inventoryType = InventoryType.Simple;
+    bool isPlayerInventory = false;
 
     public int _Id { get => id; }
-    public InventoryType _InventoryType { get => inventoryType; }
+    public bool _IsPlayerInventory { get => isPlayerInventory; }
 
     // Start is called before the first frame update
     void Start()

@@ -140,8 +140,9 @@ MonoBehaviour:
   buttonCancel: {fileID: 3519125318710007436}
   eventCloseConfirmationDialog: {fileID: 11400000, guid: 0903c6d6a596f4a45bf5b50925891307, type: 2}
   eventItemBought: {fileID: 11400000, guid: 9c7e19b245080a44bac82ad0eea262b6, type: 2}
+  eventItemSold: {fileID: 11400000, guid: 6c06879b309d38049869333df535e1b8, type: 2}
   eventReduceFromFunds: {fileID: 11400000, guid: 3d11e1657af84ba438b0e932fedd7b59, type: 2}
-  eventAddToFunds: {fileID: 0}
+  eventAddToFunds: {fileID: 11400000, guid: 5c699af92a7b20e4d85871c717d172cf, type: 2}
 --- !u!114 &7768917908408284937
 MonoBehaviour:
   m_ObjectHideFlags: 0

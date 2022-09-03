@@ -7,10 +7,11 @@ namespace LSW.UI
 {
     public class ShopBuyScreenController : InventoryScreenController
     {
-
-        //Buy
-        //Instantiate item templates
-        //Contains list of items
-
+        public override void RefreshScreen()
+        {
+            inventory = InventoryManager.instance.inventoryShop;
+            UpdateItemTemplates();
+            UpdateTextFunds();
+        }
     }
 }

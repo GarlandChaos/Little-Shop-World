@@ -17,11 +17,6 @@ namespace LSW.UI
         [SerializeField]
         protected Inventory inventory = null;
 
-        private void Awake()
-        {
-            inventory = Instantiate(inventory);
-        }
-
         private void OnEnable()
         {
             RefreshScreen();
@@ -41,25 +36,29 @@ namespace LSW.UI
             }
         }
 
-        public void RefreshScreen()
+        public virtual void RefreshScreen()
         {
+            inventory = InventoryManager.instance._InventoryPlayer;
             UpdateItemTemplates();
             UpdateTextFunds();
         }
 
-        void UpdateItemTemplates()
+        protected void UpdateItemTemplates()
         {
             ClearItemTemplates();
 
-            int i = 0;
-            foreach (Item item in inventory.itemsList)
+            if(inventory != null)
             {
-                AddItemTemplate(item, i);
-                i++;
+                int i = 0;
+                foreach (Item item in inventory.itemsList)
+                {
+                    AddItemTemplate(item, i);
+                    i++;
+                }
             }
         }
 
-        void UpdateTextFunds()
+        protected void UpdateTextFunds()
         {
             if (FundsManager.instance != null)
                 textFunds.text = "$" + FundsManager.instance._Funds.ToString();

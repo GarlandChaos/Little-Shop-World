@@ -38,13 +38,13 @@ namespace LSW.UI
             }
         }
 
-        public void ShowItemDetails(Item item, InventoryType infoType)
+        public void ShowItemDetails(Item item, InfoType infoType)
         {
             textItemName.text = item._Name;
             textItemDescription.text = item._Description;
-            if (infoType != InventoryType.Simple)
+            if (infoType != InfoType.Simple)
             {
-                textPrice.text = (infoType == InventoryType.Buy) ? "Buy for: " + item._BuyPrice.ToString() : "Sell for: " + item._SellPrice.ToString();
+                textPrice.text = (infoType == InfoType.Buy) ? "Buy for: " + item._BuyPrice.ToString() : "Sell for: " + item._SellPrice.ToString();
                 textPrice.enabled = true;
             }
 

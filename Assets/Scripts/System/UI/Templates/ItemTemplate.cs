@@ -42,12 +42,12 @@ public class ItemTemplate : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public virtual void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Equipar item");
-        eventClickedOnItemTemplate.Raise(item, inventoryId, InventoryType.Simple);
+        eventClickedOnItemTemplate.Raise(item, inventoryId, InfoType.Simple);
     }
 
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
-        eventShowItemDetails.Raise(item, InventoryType.Simple);
+        eventShowItemDetails.Raise(item, InfoType.Simple);
     }
 
     public void OnPointerExit(PointerEventData eventData)

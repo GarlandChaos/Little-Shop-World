@@ -41,11 +41,11 @@ public class BuyItemTemplate : ItemTemplate
     public override void OnPointerClick(PointerEventData eventData)
     {
         if (clickable)
-            eventClickedOnItemTemplate.Raise(item, inventoryId, InventoryType.Buy);
+            eventClickedOnItemTemplate.Raise(item, inventoryId, InfoType.Buy);
     }
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
-        eventShowItemDetails.Raise(item, InventoryType.Buy);
+        eventShowItemDetails.Raise(item, InfoType.Buy);
     }
 }

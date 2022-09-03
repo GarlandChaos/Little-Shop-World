@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using LSW.UI;
 
 namespace LSW.Events
 {
-    interface IGameEventListenerItemIntInventoryType : IGameEventListener
+    interface IGameEventListenerItemInfoType : IGameEventListener
     {
-        void OnEventRaised(Item item, int id, InventoryType inventoryType);
+        void OnEventRaised(Item item, InfoType infoType);
     }
 
     [System.Serializable]
-    public class ItemIntInventoryTypeEvent : UnityEvent<Item, int, InventoryType> { }
+    public class ItemInfoTypeEvent : UnityEvent<Item, InfoType> { }
 
-    public class GameEventListenerItemIntInventoryType : MonoBehaviour, IGameEventListenerItemIntInventoryType
+    public class GameEventListenerItemInfoType : MonoBehaviour, IGameEventListenerItemInfoType
     {
         public GameEvent gameEvent;
-        public ItemIntInventoryTypeEvent response;
+        public ItemInfoTypeEvent response;
 
         private void OnEnable()
         {
@@ -38,9 +39,9 @@ namespace LSW.Events
             Debug.Log("Cannot use this version");
         }
 
-        public void OnEventRaised(Item item, int id, InventoryType inventoryType)
+        public void OnEventRaised(Item item, InfoType infoType)
         {
-            response.Invoke(item, id, inventoryType);
+            response.Invoke(item, infoType);
         }
     }
 }

@@ -36,7 +36,7 @@ public class Interactor : MonoBehaviour, IInteractor
         {
             if(hit.transform != transformCurrentHit)
             {
-                hit.transform.GetComponent<Interactable>().Interact();
+                hit.transform.GetComponent<IInteractable>().Interact();
                 transformCurrentHit = hit.transform;
             }
         }

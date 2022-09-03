@@ -27,10 +27,10 @@ namespace LSW.Events
                     continue;
                 }
 
-                IGameEventListenerItemInventoryType listenerItemInfoType = listeners[i] as IGameEventListenerItemInventoryType;
+                IGameEventListenerItemInfoType listenerItemInfoType = listeners[i] as IGameEventListenerItemInfoType;
                 if (listenerItemInfoType != null)
                 {
-                    listenerItemInfoType.OnEventRaised((Item)args[0], (InventoryType)args[1]);
+                    listenerItemInfoType.OnEventRaised((Item)args[0], (InfoType)args[1]);
                     continue;
                 }
 
@@ -41,10 +41,10 @@ namespace LSW.Events
                     continue;
                 }
 
-                IGameEventListenerItemIntInventoryType listenerItemIntInventoryType = listeners[i] as IGameEventListenerItemIntInventoryType;
+                IGameEventListenerItemIntInfoType listenerItemIntInventoryType = listeners[i] as IGameEventListenerItemIntInfoType;
                 if (listenerItemIntInventoryType != null)
                 {
-                    listenerItemIntInventoryType.OnEventRaised((Item)args[0], (int)args[1], (InventoryType)args[2]);
+                    listenerItemIntInventoryType.OnEventRaised((Item)args[0], (int)args[1], (InfoType)args[2]);
                     continue;
                 }
 

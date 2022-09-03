@@ -46,5 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsList: []
   initialItemsList: {fileID: 11400000, guid: dddfbf2205751a64b9e2549ea48cc1fa, type: 2}
-  inventoryType: 0
-  eventItemAddedToInventory: {fileID: 11400000, guid: 2bab54a24aaceba47bcca911fcde406a, type: 2}
+  isPlayerInventory: 1

@@ -7,6 +7,7 @@ public class FundsManager : MonoBehaviour
     public static FundsManager instance = null;
     [SerializeField]
     int fundsInitialValue = 0;
+    [SerializeField]
     int funds = 0;
 
     public int _Funds { get => funds; }

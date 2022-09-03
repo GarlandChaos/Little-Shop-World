@@ -10,6 +10,9 @@ public class InventoryManager : MonoBehaviour
     Inventory inventoryPlayer = null;
     [SerializeField]
     GameEvent eventInventoriesModified = null;
+    public Inventory inventoryShop = null;
+
+    public Inventory _InventoryPlayer { get => inventoryPlayer; }
 
     private void Awake()
     {
@@ -26,7 +29,7 @@ public class InventoryManager : MonoBehaviour
 
     public int RegisterInventory(Inventory inventory)
     {
-        if (inventory._InventoryType == InventoryType.Simple)
+        if (inventory._IsPlayerInventory)
         {
             if (inventoryPlayer == null)
                 inventoryPlayer = inventory;
@@ -41,22 +44,23 @@ public class InventoryManager : MonoBehaviour
         return id;
     }
 
-    public void ModifyInventory(Item item, int id)
+    public void ModifyInventory(Item item, int id, InfoType infoType)
     {
         foreach(Inventory inventory in inventories)
         {
             if(inventory._Id == id)
             {
-                if(inventory._InventoryType == InventoryType.Buy)
+                if(infoType == InfoType.Buy)
                 {
                     inventory.RemoveItem(item);
                     inventoryPlayer.AddItem(item);
                 }
-                else if (inventory._InventoryType == InventoryType.Sell)
+                else if (infoType == InfoType.Sell)
                 {
                     inventoryPlayer.RemoveItem(item);
-                    inventory.AddItem(item);
+                    inventoryShop.AddItem(item);
                 }
+                break;
             }
         }
         eventInventoriesModified.Raise();

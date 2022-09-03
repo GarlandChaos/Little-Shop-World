@@ -15,7 +15,7 @@ namespace LSW.UI
             //UIManager.instance.RequestScreen("Inventory Screen", true);
         }
 
-        public void ShowItemDetails(Item item, InventoryType infoType)
+        public void ShowItemDetails(Item item, InfoType infoType)
         {
             UIManager.instance.RequestScreen("Contextual Information Dialog", true);
             eventSendItemDetails.Raise(item, infoType);
@@ -31,9 +31,14 @@ namespace LSW.UI
             UIManager.instance.RequestScreen("Shop Buy Screen", true);
         }
 
-        public void ShowConfirmationMessage(Item item, int inventoryId, InventoryType infoType)
+        public void OpenShopSellScreen()
         {
-            if(infoType != InventoryType.Simple)
+            UIManager.instance.RequestScreen("Shop Sell Screen", true);
+        }
+
+        public void ShowConfirmationMessage(Item item, int inventoryId, InfoType infoType)
+        {
+            if(infoType != InfoType.Simple)
             {
                 UIManager.instance.RequestScreen("Contextual Information Dialog", false);
                 UIManager.instance.RequestScreen("Confirmation Dialog", true);

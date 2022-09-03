@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1687346391157275719}
   - component: {fileID: 1687346391157275736}
-  - component: {fileID: 1687346391157275718}
+  - component: {fileID: 959175096484114689}
+  - component: {fileID: 936599505355302900}
   m_Layer: 0
   m_Name: Inventory Manager
   m_TagString: Untagged
@@ -46,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventInventoriesModified: {fileID: 11400000, guid: b2e4a8fcd2600a54c98b599362813e02, type: 2}
---- !u!114 &1687346391157275718
+--- !u!114 &959175096484114689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,10 +56,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687346391157275737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2b8e662d4fe2da4192d0a5a794daca9, type: 3}
+  m_Script: {fileID: 11500000, guid: e106cba5f9ee4d74fb8089d2844fd19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 9c7e19b245080a44bac82ad0eea262b6, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1687346391157275736}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ModifyInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &936599505355302900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687346391157275737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e106cba5f9ee4d74fb8089d2844fd19b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6c06879b309d38049869333df535e1b8, type: 2}
   response:
     m_PersistentCalls:
       m_Calls:

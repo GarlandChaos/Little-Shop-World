@@ -5,6 +5,13 @@ using UnityEngine.UI;
 using TMPro;
 using LSW.Events;
 
+public enum InfoType
+{
+    Simple,
+    Buy,
+    Sell
+}
+
 namespace LSW.UI
 {
     public class ConfirmationDialogController : ADialogController
@@ -20,12 +27,14 @@ namespace LSW.UI
         [SerializeField]
         GameEvent eventItemBought = null;
         [SerializeField]
+        GameEvent eventItemSold = null;
+        [SerializeField]
         GameEvent eventReduceFromFunds = null;
         [SerializeField]
         GameEvent eventAddToFunds = null;
         Item currentItem = null;
         int currentInventoryId = -1;
-        InventoryType currentInfoType = InventoryType.Simple;
+        InfoType currentInfoType = InfoType.Simple;
 
         private void OnEnable()
         {
@@ -34,17 +43,17 @@ namespace LSW.UI
             currentItem = null;
         }
 
-        public void ShowMessage(Item item, int inventoryId, InventoryType infoType)
+        public void ShowMessage(Item item, int inventoryId, InfoType infoType)
         {
-            if(infoType != InventoryType.Simple)
+            if(infoType != InfoType.Simple)
             {
                 buttonConfirm.enabled = true;
                 buttonCancel.enabled = true;
                 currentItem = item;
                 currentInventoryId = inventoryId;
-                currentInfoType = InventoryType.Buy;
+                currentInfoType = infoType;
 
-                if (infoType == InventoryType.Buy)
+                if (infoType == InfoType.Buy)
                     textConfirmationMessage.text = "Do you want to buy " + item._Name + " for " + item._BuyPrice.ToString() + "?";
                 else
                     textConfirmationMessage.text = "Do you want to sell " + item._Name + " for " + item._SellPrice.ToString() + "?";
@@ -53,16 +62,15 @@ namespace LSW.UI
 
         public void Confirm()
         {
-            if(currentInfoType == InventoryType.Buy)
+            if(currentInfoType == InfoType.Buy) //Buys item
             {
-                Debug.Log("Comprar item");
                 eventReduceFromFunds.Raise(currentItem._BuyPrice);
-                eventItemBought.Raise(currentItem, currentInventoryId);
+                eventItemBought.Raise(currentItem, currentInventoryId, currentInfoType);
             }
-            else if(currentInfoType == InventoryType.Sell)
+            else if(currentInfoType == InfoType.Sell) //Sells item
             {
-                Debug.Log("Vender item");
-                //sell event
+                eventAddToFunds.Raise(currentItem._SellPrice);
+                eventItemSold.Raise(currentItem, currentInventoryId, currentInfoType);
             }
             
             eventCloseConfirmationDialog.Raise();
