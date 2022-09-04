@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Red Arm Left Body Part
   m_EditorClassIdentifier: 
   bodyType: 2
-  sprite: {fileID: 21300000, guid: 2ff94bcdfdd92134dbe5077da933fe16, type: 3}
+  spriteUp: {fileID: 21300000, guid: 2ff94bcdfdd92134dbe5077da933fe16, type: 3}
+  spriteDown: {fileID: 21300000, guid: 2ff94bcdfdd92134dbe5077da933fe16, type: 3}
+  spriteLeft: {fileID: 21300000, guid: 2e3866c024df91d4e84dcd5b6f0367aa, type: 3}
+  spriteRight: {fileID: 21300000, guid: 2e3866c024df91d4e84dcd5b6f0367aa, type: 3}
   flippedSprite: 1

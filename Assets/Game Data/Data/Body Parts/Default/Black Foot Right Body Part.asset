@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce4cb3efe0d485f4190532e9e600a766, type: 3}
-  m_Name: Foot Right Body Part 2
+  m_Name: Black Foot Right Body Part
   m_EditorClassIdentifier: 
   bodyType: 5
-  sprite: {fileID: 21300000, guid: 53b669ce072ed6a4ebe16c4818d23995, type: 3}
+  spriteUp: {fileID: 21300000, guid: 42bc1099d21560347822f185acd87ad6, type: 3}
+  spriteDown: {fileID: 21300000, guid: 53b669ce072ed6a4ebe16c4818d23995, type: 3}
+  spriteLeft: {fileID: 21300000, guid: ceea0cc4158fadf4bb0bc92078500f90, type: 3}
+  spriteRight: {fileID: 21300000, guid: ceea0cc4158fadf4bb0bc92078500f90, type: 3}
+  flippedSprite: 0

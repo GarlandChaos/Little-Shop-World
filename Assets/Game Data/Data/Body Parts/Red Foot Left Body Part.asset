@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Red Foot Left Body Part
   m_EditorClassIdentifier: 
   bodyType: 6
-  sprite: {fileID: 21300000, guid: d65723eb7f59a084d8e5bd7008033722, type: 3}
+  spriteUp: {fileID: 21300000, guid: b46ab8826e20a884b8dd7edc25608d6f, type: 3}
+  spriteDown: {fileID: 21300000, guid: d65723eb7f59a084d8e5bd7008033722, type: 3}
+  spriteLeft: {fileID: 21300000, guid: c1da82a23ff16d040ab8a781666be519, type: 3}
+  spriteRight: {fileID: 21300000, guid: c1da82a23ff16d040ab8a781666be519, type: 3}
   flippedSprite: 1

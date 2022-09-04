@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClothesModifierUI : MonoBehaviour
+public class BodyPartsModifierUI : MonoBehaviour
 {
 	[SerializeField]
 	Dictionary<BodyType, Image> imagesCharacter = new Dictionary<BodyType, Image>();
@@ -26,7 +26,7 @@ public class ClothesModifierUI : MonoBehaviour
 	{
 		foreach (BodyPart bp in item._BodyPartsList)
 		{
-			imagesCharacter[bp._BodyType].sprite = bp._Sprite;
+			imagesCharacter[bp._BodyType].sprite = bp._SpriteDown;
 			float x = (bp._FlippedSprite)? -1f : 1f;
 			Vector2 scale = new Vector2(x, 1);
 			imagesCharacter[bp._BodyType].GetComponent<RectTransform>().localScale = scale;
