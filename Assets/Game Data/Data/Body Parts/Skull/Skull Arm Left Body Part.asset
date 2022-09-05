@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4cb3efe0d485f4190532e9e600a766, type: 3}
+  m_Name: Skull Arm Left Body Part
+  m_EditorClassIdentifier: 
+  bodyType: 2
+  spriteUp: {fileID: 21300000, guid: 37570b808e3fb4e4d95f8ecd504447ef, type: 3}
+  spriteDown: {fileID: 21300000, guid: 37570b808e3fb4e4d95f8ecd504447ef, type: 3}
+  spriteLeft: {fileID: 21300000, guid: a3fd9afe13017204d97aa60ab6d45b14, type: 3}
+  spriteRight: {fileID: 21300000, guid: a3fd9afe13017204d97aa60ab6d45b14, type: 3}

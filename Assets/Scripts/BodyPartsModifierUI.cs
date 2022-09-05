@@ -9,7 +9,7 @@ public class BodyPartsModifierUI : MonoBehaviour
 	Dictionary<BodyType, Image> imagesCharacter = new Dictionary<BodyType, Image>();
 	[SerializeField]
 	Image imageTorso = null, imageArmRight = null, imageArmLeft = null,
-	imageLegRight = null, imageLegLeft = null, imageFootRight = null, imageFootLeft = null;
+	imageLegRight = null, imageLegLeft = null, imageFootRight = null, imageFootLeft = null, imageHandRight = null, imageHandLeft = null, imageHead = null;
 
 	private void Awake()
 	{
@@ -20,6 +20,9 @@ public class BodyPartsModifierUI : MonoBehaviour
 		imagesCharacter[BodyType.LegLeft] = imageLegLeft;
 		imagesCharacter[BodyType.FootRight] = imageFootRight;
 		imagesCharacter[BodyType.FootLeft] = imageFootLeft;
+		imagesCharacter[BodyType.HandRight] = imageHandRight;
+		imagesCharacter[BodyType.HandLeft] = imageHandLeft;
+		imagesCharacter[BodyType.Head] = imageHead;
 	}
 
 	public void ModifyClothes(Item item)
@@ -27,7 +30,7 @@ public class BodyPartsModifierUI : MonoBehaviour
 		foreach (BodyPart bp in item._BodyPartsList)
 		{
 			imagesCharacter[bp._BodyType].sprite = bp._SpriteDown;
-			float x = (bp._FlippedSprite)? -1f : 1f;
+			float x = (bp._BodyType == BodyType.HandLeft || bp._BodyType == BodyType.ArmLeft || bp._BodyType == BodyType.LegLeft || bp._BodyType == BodyType.FootLeft) ? -1f : 1f;
 			Vector2 scale = new Vector2(x, 1);
 			imagesCharacter[bp._BodyType].GetComponent<RectTransform>().localScale = scale;
 		}

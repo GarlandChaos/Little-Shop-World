@@ -29,13 +29,10 @@ public class BodyPart : ScriptableObject
     Sprite spriteLeft = null;
     [SerializeField]
     Sprite spriteRight = null;
-    [SerializeField]
-    bool flippedSprite = false;
 
     public BodyType _BodyType { get => bodyType; }
     public Sprite _SpriteUp { get => spriteUp; }
     public Sprite _SpriteDown { get => spriteDown; }
     public Sprite _SpriteLeft { get => spriteLeft; }
     public Sprite _SpriteRight { get => spriteRight; }
-    public bool _FlippedSprite { get => flippedSprite; }
 }

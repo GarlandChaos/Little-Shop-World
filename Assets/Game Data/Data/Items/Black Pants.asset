@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce996cc7046dd4b919319b748b13cf, type: 3}
+  m_Name: Black Pants
+  m_EditorClassIdentifier: 
+  itemName: Black Pants
+  description: These go well with the skull shirt!
+  buyPrice: 40
+  sellPrice: 20
+  sprite: {fileID: 21300000, guid: 272d04119b457d6499a5188f3eb59256, type: 3}
+  bodyPartsList:
+  - {fileID: 11400000, guid: 24b5ca3643d959b4bb21d22457cf0c85, type: 2}
+  - {fileID: 11400000, guid: e51c9664f0c02ab4db42b2cb5b580b8f, type: 2}

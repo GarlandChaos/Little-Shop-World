@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using LSW.Events;
 
 namespace LSW.UI
 {
     public class InventoryScreenController : APanelController
     {
+        [SerializeField]
+        protected GameEvent eventPause = null;
+        [SerializeField]
+        protected GameEvent eventUnpause = null;
         protected List<ItemTemplate> itemTemplates = new List<ItemTemplate>();
         [SerializeField]
         protected RectTransform itemContainer = null;
@@ -14,11 +19,11 @@ namespace LSW.UI
         protected ItemTemplate itemTemplatePrefab = null;
         [SerializeField]
         protected TMP_Text textFunds = null;
-        [SerializeField]
         protected Inventory inventory = null;
 
         private void OnEnable()
         {
+            eventPause.Raise();
             RefreshScreen();
         }
 
@@ -38,9 +43,12 @@ namespace LSW.UI
 
         public virtual void RefreshScreen()
         {
-            inventory = InventoryManager.instance._InventoryPlayer;
-            UpdateItemTemplates();
-            UpdateTextFunds();
+            if(InventoryManager.instance != null)
+            {
+                inventory = InventoryManager.instance._InventoryPlayer;
+                UpdateItemTemplates();
+                UpdateTextFunds();
+            }
         }
 
         protected void UpdateItemTemplates()
@@ -72,6 +80,7 @@ namespace LSW.UI
 
         public void CloseScreen()
         {
+            eventUnpause.Raise();
             Hide();
         }
     }

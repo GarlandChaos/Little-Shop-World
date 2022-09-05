@@ -6,13 +6,17 @@ using LSW.Events;
 public class Inventory : MonoBehaviour
 {
     int id = -1;
+    [HideInInspector]
     public List<Item> itemsList = new List<Item>();
     [SerializeField]
-    ItemList initialItemsList = null;
+    string ownerName = string.Empty; //InventorySettings
     [SerializeField]
-    bool isPlayerInventory = false;
+    ItemList initialItemsList = null; //InventorySettings
+    [SerializeField]
+    bool isPlayerInventory = false; //InventorySettings
 
     public int _Id { get => id; }
+    public string _OwnerName { get => ownerName; }
     public bool _IsPlayerInventory { get => isPlayerInventory; }
 
     // Start is called before the first frame update

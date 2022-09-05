@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6763fbead44df94b87f8eb0786cbc99, type: 3}
+  m_Name: Simaria Shop Item List
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 11400000, guid: 01935005a787b284dae917eeb84dfe33, type: 2}
+  - {fileID: 11400000, guid: 3f5bf9bda39ceac4caa159e55b2d0a49, type: 2}
+  - {fileID: 11400000, guid: a65df4f96545f7c43a85bcb62927d830, type: 2}
+  - {fileID: 11400000, guid: 24a717e4e487d5e4090ee0d7342e2910, type: 2}
+  - {fileID: 11400000, guid: 99a079767d8947148b71b24055ecc68c, type: 2}

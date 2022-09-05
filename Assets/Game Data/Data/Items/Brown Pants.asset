@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce996cc7046dd4b919319b748b13cf, type: 3}
+  m_Name: Brown Pants
+  m_EditorClassIdentifier: 
+  itemName: Brown Pants
+  description: These go well with the golden shirt!
+  buyPrice: 40
+  sellPrice: 20
+  sprite: {fileID: 21300000, guid: 6f785d5e22601d743b904e802cdf2c2c, type: 3}
+  bodyPartsList:
+  - {fileID: 11400000, guid: bc782248a210b1841890ffef9a8550d4, type: 2}
+  - {fileID: 11400000, guid: 76338c37756c5b249ac12ed38ca54613, type: 2}

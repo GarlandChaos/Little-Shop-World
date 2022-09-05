@@ -14,16 +14,12 @@ public class FundsManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
-        {
+        if (instance == null)
             instance = this;
-            DontDestroyOnLoad(gameObject);
-            funds = fundsInitialValue;
-        }
         else
-        {
             Destroy(gameObject);
-        }
+
+        funds = fundsInitialValue;
     }
 
     public void AddToFunds(int valueToAdd)

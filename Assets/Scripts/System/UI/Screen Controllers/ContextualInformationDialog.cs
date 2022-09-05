@@ -44,7 +44,7 @@ namespace LSW.UI
             textItemDescription.text = item._Description;
             if (infoType != InfoType.Simple)
             {
-                textPrice.text = (infoType == InfoType.Buy) ? "Buy for: " + item._BuyPrice.ToString() : "Sell for: " + item._SellPrice.ToString();
+                textPrice.text = (infoType == InfoType.Buy) ? "Click to buy for: " + item._BuyPrice.ToString() : "Click to sell for: " + item._SellPrice.ToString();
                 textPrice.enabled = true;
             }
 

@@ -65,6 +65,9 @@ GameObject:
   - component: {fileID: 4497011848049194399}
   - component: {fileID: 2817304280585151839}
   - component: {fileID: 3164193775930425011}
+  - component: {fileID: 5176571258303089260}
+  - component: {fileID: 1343872029596711101}
+  - component: {fileID: 1566864961889879082}
   m_Layer: 5
   m_Name: UI Event Listener Controller
   m_TagString: Untagged
@@ -85,7 +88,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6588873183743567962}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7741445312674578381
 MonoBehaviour:
@@ -101,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSendItemDetails: {fileID: 11400000, guid: f8898855bbcdc6043bca116fd4105deb, type: 2}
   eventSendConfirmationMessageDetails: {fileID: 11400000, guid: 72f3b4f2272f8d54f9e4eb901f83bc25, type: 2}
+  eventShowDialogue: {fileID: 11400000, guid: 3329317f0566228458e115480a294edb, type: 2}
 --- !u!114 &1495241415320627049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +264,90 @@ MonoBehaviour:
       - m_Target: {fileID: 7741445312674578381}
         m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
         m_MethodName: OpenShopSellScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5176571258303089260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b580fee715425489f7c3014848afb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 8d4deb6b97777714bb42b9820fbfaec1, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: OpenShopkeeperDialogueScreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1343872029596711101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: af36a651ebc6b8745ac1a6b1cc1f6c8d, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: OpenCreditsScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1566864961889879082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329305519955576102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: fdfe147de75ec9c4abe4c536797bcbc2, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7741445312674578381}
+        m_TargetAssemblyTypeName: LSW.UI.UIEventListenerController, Assembly-CSharp
+        m_MethodName: OpenMainMenuScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -492,6 +580,7 @@ Transform:
   - {fileID: 5255838693522194818}
   - {fileID: 5547765679205057686}
   - {fileID: 6305959137705024974}
+  - {fileID: 8580724510819117438}
   - {fileID: 8367369932718883482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -666,3 +755,137 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &8856501600852464862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8580724510819117438}
+  - component: {fileID: 4595869611442110505}
+  - component: {fileID: 377000417128754607}
+  - component: {fileID: 4987171213558151314}
+  - component: {fileID: 3022650366166742660}
+  m_Layer: 5
+  m_Name: Cursor Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8580724510819117438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856501600852464862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6588873183743567962}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4595869611442110505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856501600852464862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fa98f747fc490478f7b8d037825b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textureCursorDefault: {fileID: 2800000, guid: 80404cb5a7072de49a64f71dbf393877, type: 3}
+  textureCursorInteractable: {fileID: 2800000, guid: ced1a49450f399c488263f7b5737ee3d, type: 3}
+  textureCursorNotInteractable: {fileID: 2800000, guid: 74344df138e849145974c7487ada25c4, type: 3}
+--- !u!114 &377000417128754607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856501600852464862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4309413bf446fe0499e7a5054d869837, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4595869611442110505}
+        m_TargetAssemblyTypeName: CursorController, Assembly-CSharp
+        m_MethodName: ChangeCursorToInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4987171213558151314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856501600852464862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1069243cfcfa24947ba419b1dd2ae9f7, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4595869611442110505}
+        m_TargetAssemblyTypeName: CursorController, Assembly-CSharp
+        m_MethodName: ChangeCursorToDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3022650366166742660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8856501600852464862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c49985511c45542af2772a0b5c6cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4b1472a632fc7374db35a857cb9c90f5, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4595869611442110505}
+        m_TargetAssemblyTypeName: CursorController, Assembly-CSharp
+        m_MethodName: ChangeCursorToNotInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -9,10 +9,12 @@ namespace LSW.UI
         GameEvent eventSendItemDetails = null;
         [SerializeField]
         GameEvent eventSendConfirmationMessageDetails = null;
+        [SerializeField]
+        GameEvent eventShowDialogue = null;
 
         private void Start()
         {
-            //UIManager.instance.RequestScreen("Inventory Screen", true);
+            UIManager.instance.RequestScreen("Main Menu Screen", true);
         }
 
         public void ShowItemDetails(Item item, InfoType infoType)
@@ -29,11 +31,19 @@ namespace LSW.UI
         public void OpenShopBuyScreen()
         {
             UIManager.instance.RequestScreen("Shop Buy Screen", true);
+            UIManager.instance.RequestScreen("Shopkeeper Dialogue Screen", false);
         }
 
         public void OpenShopSellScreen()
         {
             UIManager.instance.RequestScreen("Shop Sell Screen", true);
+            UIManager.instance.RequestScreen("Shopkeeper Dialogue Screen", false);
+        }
+
+        public void OpenShopkeeperDialogueScreen(DialogueSettings dialogueSettings)
+        {
+            UIManager.instance.RequestScreen("Shopkeeper Dialogue Screen", true);
+            eventShowDialogue.Raise(dialogueSettings);
         }
 
         public void ShowConfirmationMessage(Item item, int inventoryId, InfoType infoType)
@@ -49,6 +59,18 @@ namespace LSW.UI
         public void CloseConfirmationMessage()
         {
             UIManager.instance.RequestScreen("Confirmation Dialog", false);
+        }
+
+        public void OpenCreditsScreen()
+        {
+            UIManager.instance.RequestScreen("Main Menu Screen", false);
+            UIManager.instance.RequestScreen("Credits Screen", true);
+        }
+
+        public void OpenMainMenuScreen()
+        {
+            UIManager.instance.RequestScreen("Credits Screen", false);
+            UIManager.instance.RequestScreen("Main Menu Screen", true);
         }
     }
 }

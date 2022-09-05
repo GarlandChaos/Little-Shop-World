@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6763fbead44df94b87f8eb0786cbc99, type: 3}
+  m_Name: Simone Shop Item List
+  m_EditorClassIdentifier: 
+  itemList:
+  - {fileID: 11400000, guid: 2e3e57c5b57d95049b7a7bdbc3788ccf, type: 2}
+  - {fileID: 11400000, guid: 1d86de7efb63d914eb3d0f3daee57295, type: 2}
+  - {fileID: 11400000, guid: 4b831fe2491a0e34abae67a7772e99ea, type: 2}
+  - {fileID: 11400000, guid: adf61d11fb195744c9ef10f107ead295, type: 2}
+  - {fileID: 11400000, guid: 08bf4ac8c0b1cc04485ff9bf837166dd, type: 2}

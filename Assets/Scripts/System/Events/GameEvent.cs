@@ -48,6 +48,20 @@ namespace LSW.Events
                     continue;
                 }
 
+                IGameEventListenerDialogueSettings listenerDialogueSettings = listeners[i] as IGameEventListenerDialogueSettings;
+                if (listenerDialogueSettings != null)
+                {
+                    listenerDialogueSettings.OnEventRaised((DialogueSettings)args[0]);
+                    continue;
+                }
+
+                IGameEventListenerTransform listenerTransform = listeners[i] as IGameEventListenerTransform;
+                if (listenerTransform != null)
+                {
+                    listenerTransform.OnEventRaised((Transform)args[0]);
+                    continue;
+                }
+
                 listeners[i].OnEventRaised();
             }
         }

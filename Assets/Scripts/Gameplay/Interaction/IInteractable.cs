@@ -5,10 +5,6 @@ using UnityEngine;
 public interface IInteractable 
 {
     void Interact();
+    void EnterInteractionArea();
+    void ExitInteractionArea();
 }
-
-public interface IInteractor 
-{
-    //void Interact();
-}
-

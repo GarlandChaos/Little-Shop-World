@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ce996cc7046dd4b919319b748b13cf, type: 3}
+  m_Name: Black Shoes
+  m_EditorClassIdentifier: 
+  itemName: Black Shoes
+  description: With these you can run like the wind!
+  buyPrice: 20
+  sellPrice: 10
+  sprite: {fileID: 21300000, guid: 17f25f42c5003e141af4bef5649e7e47, type: 3}
+  bodyPartsList:
+  - {fileID: 11400000, guid: 75bdeda8065655043a56dd3191e4985a, type: 2}
+  - {fileID: 11400000, guid: e37a01f3e015d3449a3ed03bcdbab251, type: 2}

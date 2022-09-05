@@ -2,14 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Direction
-{
-	Up,
-	Down,
-	Right,
-	Left
-}
-
 public class BodyPartsModifier : MonoBehaviour
 {
 	Dictionary<BodyType, SpriteRenderer> spriteRenderersCharacter = new Dictionary<BodyType, SpriteRenderer>();
@@ -19,7 +11,8 @@ public class BodyPartsModifier : MonoBehaviour
 		spriteRendererFootRight = null, spriteRendererFootLeft = null, spriteRendererHandRight = null, spriteRendererHandLeft = null, spriteRendererHead = null;
 	[SerializeField]
 	BodyPartList defaultBodyPartList = null;
-	public Direction currentDirection = Direction.Down;
+	[SerializeField]
+	DirectionIndicator directionIndicator = null;
 
     private void Awake()
     {
@@ -37,72 +30,43 @@ public class BodyPartsModifier : MonoBehaviour
 		foreach(BodyPart bp in defaultBodyPartList._BodyPartList)
 			equippedBodyParts[bp._BodyType] = bp;
 
-		ChangeDirection(Direction.Down);
+		OnChangeDirection();
 	}
-
-    private void Update()
-    {
-		CheckForDirectionChange();
-	}
-
-	void CheckForDirectionChange()
-    {
-		float x = Input.GetAxis("Horizontal");
-		float y = Input.GetAxis("Vertical");
-
-		if (x != 0)
-		{
-			if (x < 0) //left
-				ChangeDirection(Direction.Left);
-			else if (x > 0) //right
-				ChangeDirection(Direction.Right);
-		}
-		else
-		{
-			if (y < 0) //down
-				ChangeDirection(Direction.Down);
-			else if (y > 0) //up
-				ChangeDirection(Direction.Up);
-		}
-	}
-
-	void ChangeDirection(Direction direction)
+	
+	public void OnChangeDirection()
 	{
-		if(currentDirection != direction)
-        {
-			ChangeBodyPartsByDirection(direction);
-			AdjustBodyPartsSortingOrder(direction);
-			currentDirection = direction;
-		}
+		ChangeBodyPartsByDirection();
+		AdjustBodyPartsSortingOrder();
 	}
 
-	void ChangeBodyPartsByDirection(Direction direction)
+	public void ChangeBodyPartsByDirection()
     {
 		foreach (KeyValuePair<BodyType, BodyPart> kvp in equippedBodyParts)
 		{
 			Sprite spriteToChangeTo = null;
-			if (direction == Direction.Up)
+			if (directionIndicator._CurrentDirection == Direction.Up)
 				spriteToChangeTo = kvp.Value._SpriteUp;
-			else if (direction == Direction.Down)
+			else if (directionIndicator._CurrentDirection == Direction.Down)
 				spriteToChangeTo = kvp.Value._SpriteDown;
-			else if (direction == Direction.Left)
+			else if (directionIndicator._CurrentDirection == Direction.Left)
 				spriteToChangeTo = kvp.Value._SpriteLeft;
-			else if (direction == Direction.Right)
+			else if (directionIndicator._CurrentDirection == Direction.Right)
 				spriteToChangeTo = kvp.Value._SpriteRight;
 
 			spriteRenderersCharacter[kvp.Key].sprite = spriteToChangeTo;
 
 
-			bool flip = direction == Direction.Left || ((direction == Direction.Up || direction == Direction.Down) &&
+			bool flip = directionIndicator._CurrentDirection == Direction.Left || ((directionIndicator._CurrentDirection == Direction.Up || directionIndicator._CurrentDirection == Direction.Down) &&
 				(kvp.Key == BodyType.HandLeft || kvp.Key == BodyType.ArmLeft || kvp.Key == BodyType.LegLeft || kvp.Key == BodyType.FootLeft));
 
 			spriteRenderersCharacter[kvp.Key].flipX = flip;
 		}
 	}
 
-	void AdjustBodyPartsSortingOrder(Direction direction)
+	void AdjustBodyPartsSortingOrder()
     {
-		if ((direction == Direction.Up || direction == Direction.Down) && (currentDirection == Direction.Right || currentDirection == Direction.Left))
+		if ((directionIndicator._CurrentDirection == Direction.Up || directionIndicator._CurrentDirection == Direction.Down) && 
+			(directionIndicator._LastDirection == Direction.Right || directionIndicator._LastDirection == Direction.Left))
 		{
 			spriteRenderersCharacter[BodyType.Torso].sortingOrder = 3;
 			spriteRenderersCharacter[BodyType.ArmRight].sortingOrder = 2;
@@ -110,7 +74,8 @@ public class BodyPartsModifier : MonoBehaviour
 			spriteRenderersCharacter[BodyType.HandRight].sortingOrder = 1;
 			spriteRenderersCharacter[BodyType.HandLeft].sortingOrder = 1;
 		}
-		else if ((direction == Direction.Left || direction == Direction.Right) && (currentDirection == Direction.Up || currentDirection == Direction.Down))
+		else if ((directionIndicator._CurrentDirection == Direction.Left || directionIndicator._CurrentDirection == Direction.Right) && 
+			(directionIndicator._LastDirection == Direction.Up || directionIndicator._LastDirection == Direction.Down))
 		{
 			spriteRenderersCharacter[BodyType.Torso].sortingOrder = 2;
 			spriteRenderersCharacter[BodyType.ArmRight].sortingOrder = 3;
@@ -125,7 +90,7 @@ public class BodyPartsModifier : MonoBehaviour
 		foreach (BodyPart bp in item._BodyPartsList)
 		{
 			equippedBodyParts[bp._BodyType] = bp;
-			spriteRenderersCharacter[bp._BodyType].sprite = bp._SpriteDown;
+			ChangeBodyPartsByDirection();
 		}
 	}
 }

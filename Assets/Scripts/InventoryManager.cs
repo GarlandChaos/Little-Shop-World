@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     Inventory inventoryPlayer = null;
     [SerializeField]
     GameEvent eventInventoriesModified = null;
+    [HideInInspector]
     public Inventory inventoryShop = null;
 
     public Inventory _InventoryPlayer { get => inventoryPlayer; }
@@ -17,14 +18,9 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
-        {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
 
     public int RegisterInventory(Inventory inventory)
@@ -39,7 +35,7 @@ public class InventoryManager : MonoBehaviour
 
         int id = inventories.Count;
         inventories.Add(inventory);
-        inventory.transform.SetParent(transform, false);
+        //inventory.transform.SetParent(transform, false);
 
         return id;
     }

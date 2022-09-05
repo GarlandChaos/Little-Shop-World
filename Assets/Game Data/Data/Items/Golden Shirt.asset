@@ -16,8 +16,8 @@ MonoBehaviour:
   description: You must be a golden boy or girl for using this one.
   buyPrice: 50
   sellPrice: 25
-  sprite: {fileID: 21300000, guid: 55703d6071b20e04e8384b85cc877df5, type: 3}
+  sprite: {fileID: 21300000, guid: 95073f2ed586de643a1b763a721165ab, type: 3}
   bodyPartsList:
-  - {fileID: 11400000, guid: d1a5568ce76440f4cbdab5b09357336b, type: 2}
-  - {fileID: 11400000, guid: 1bc03d49732dfe14c8859ecf630af31f, type: 2}
-  - {fileID: 11400000, guid: e8520554c38d73041b02b6be862d69a5, type: 2}
+  - {fileID: 11400000, guid: 6071251bc6f160646a501ee81003edf4, type: 2}
+  - {fileID: 11400000, guid: 9739e269f9a333f40b7b2d2c6bce2dc3, type: 2}
+  - {fileID: 11400000, guid: a59576d98b2df9446b035cef294bca4c, type: 2}

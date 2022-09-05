@@ -10,9 +10,18 @@ public class PlayerAnimatorController : MonoBehaviour
     static int hashWalkUpDown = Animator.StringToHash("WalkUpDown");
     static int hashWalkLeftRight = Animator.StringToHash("WalkLeftRight");
     [SerializeField]
-    BodyPartsModifier bodyPartsModifier = null;
+    DirectionIndicator directionIndicator = null;
 
     void Update()
+    {
+        if(PauseManager.instance != null)
+        {
+            if (!PauseManager.instance._Paused)
+                CheckConditions();
+        }
+    }
+
+    void CheckConditions()
     {
         bool horizontalKeyPressed = (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow));
         bool verticalKeyPressed = (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow));
@@ -24,19 +33,10 @@ public class PlayerAnimatorController : MonoBehaviour
         bool verticalKeyHeldDown = (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow));
 
         if (!horizontalKeyHeldDown && !verticalKeyHeldDown)
-        {
             animatorPlayer.SetTrigger(hashStop);
-            Debug.Log("Triggered Stop");
-        }
-        else if (bodyPartsModifier.currentDirection == Direction.Left || bodyPartsModifier.currentDirection == Direction.Right)
-        {
+        else if (directionIndicator._CurrentDirection == Direction.Left || directionIndicator._CurrentDirection == Direction.Right)
             animatorPlayer.SetTrigger(hashWalkLeftRight);
-            Debug.Log("Triggered WalkLeftRight");
-        }
-        else if (bodyPartsModifier.currentDirection == Direction.Up || bodyPartsModifier.currentDirection == Direction.Down)
-        {
+        else if (directionIndicator._CurrentDirection == Direction.Up || directionIndicator._CurrentDirection == Direction.Down)
             animatorPlayer.SetTrigger(hashWalkUpDown);
-            Debug.Log("Triggered WalkUpDown");
-        }
     }
 }

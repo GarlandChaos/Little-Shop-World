@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 88391796649210167}
   - component: {fileID: 6956370989149664452}
   - component: {fileID: 6220853240484583853}
+  - component: {fileID: 6557714757651478560}
+  - component: {fileID: 2946570056409324209}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -111,3 +113,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 0.2953781}
   m_EdgeRadius: 0
+--- !u!114 &6557714757651478560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369768737140803723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5017ba34af0eaa043a16a7ef6099c428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6956370989149664452}
+  lowSortingLayer: -1
+  highSortingLayer: 5
+  target: {fileID: 0}
+--- !u!114 &2946570056409324209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369768737140803723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d9174763effd4b9418971f169689d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: db490b3ddbc57a845b6e1c7cdc9ed281, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6557714757651478560}
+        m_TargetAssemblyTypeName: SortingLayerModifier, Assembly-CSharp
+        m_MethodName: SetTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

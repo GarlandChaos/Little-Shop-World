@@ -6,7 +6,7 @@ namespace LSW.UI
     public class UIManager : MonoBehaviour
     {
         //Singleton
-        public static UIManager instance { get; set; }
+        public static UIManager instance = null;
 
         //Inspector reference fields
         [SerializeField]
@@ -28,13 +28,10 @@ namespace LSW.UI
 
         private void Awake()
         {
-            if (instance != null)
-                Destroy(this);
+            if (instance == null)
+                instance = this;
             else
-            {
-                instance = GetComponent<UIManager>();
-                DontDestroyOnLoad(this);
-            }
+                Destroy(gameObject);
 
             Initialize();
         }
