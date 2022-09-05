@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using LSW.Gameplay;
 
 namespace LSW.UI
 {
@@ -49,9 +48,6 @@ namespace LSW.UI
             }
 
             LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
-
-            //Set fake mouse Cursor
-            //mouseCursor.transform.position = mousePos;
         }
     }
 }

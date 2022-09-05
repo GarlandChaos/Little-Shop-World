@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SellItemTemplate : ItemTemplate
+namespace LSW.UI
 {
-    public override void OnPointerClick(PointerEventData eventData)
+    public class SellItemTemplate : ItemTemplate
     {
-        eventClickedOnItemTemplate.Raise(item, inventoryId, InfoType.Sell);
+        public override void OnPointerClick(PointerEventData eventData)
+        {
+            eventClickedOnItemTemplate.Raise(item, inventoryId, InfoType.Sell);
+        }
+
+        public override void OnPointerEnter(PointerEventData eventData)
+        {
+            eventShowItemDetails.Raise(item, InfoType.Sell);
+        }
     }
 
-    public override void OnPointerEnter(PointerEventData eventData)
-    {
-        eventShowItemDetails.Raise(item, InfoType.Sell);
-    }
 }

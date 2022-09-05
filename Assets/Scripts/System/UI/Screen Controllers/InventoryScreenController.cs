@@ -1,8 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using LSW.Events;
+using LSW.Gameplay;
 
 namespace LSW.UI
 {

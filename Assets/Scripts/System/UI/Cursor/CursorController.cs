@@ -1,28 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorController : MonoBehaviour
+namespace LSW.UI
 {
-    [SerializeField]
-    Texture2D textureCursorDefault = null;
-    [SerializeField]
-    Texture2D textureCursorInteractable = null;
-    [SerializeField]
-    Texture2D textureCursorNotInteractable = null;
-
-    public void ChangeCursorToInteractable()
+    public class CursorController : MonoBehaviour
     {
-        Cursor.SetCursor(textureCursorInteractable, Vector2.zero, CursorMode.Auto);
-    }
+        [SerializeField]
+        Texture2D textureCursorDefault = null;
+        [SerializeField]
+        Texture2D textureCursorInteractable = null;
+        [SerializeField]
+        Texture2D textureCursorNotInteractable = null;
+        Texture2D textureCurrent = null;
 
-    public void ChangeCursorToNotInteractable()
-    {
-        Cursor.SetCursor(textureCursorNotInteractable, Vector2.zero, CursorMode.Auto);
-    }
+        private void Start()
+        {
+            textureCurrent = textureCursorDefault;
+        }
 
-    public void ChangeCursorToDefault()
-    {
-        Cursor.SetCursor(textureCursorDefault, Vector2.zero, CursorMode.Auto);
+        void ChangeCursorTexture(Texture2D texture)
+        {
+            if (texture != textureCurrent)
+            {
+                Cursor.SetCursor(texture, Vector2.zero, CursorMode.Auto);
+                textureCurrent = texture;
+            }
+        }
+        public void ChangeCursorToInteractable()
+        {
+            ChangeCursorTexture(textureCursorInteractable);
+        }
+
+        public void ChangeCursorToNotInteractable()
+        {
+            ChangeCursorTexture(textureCursorNotInteractable);
+        }
+
+        public void ChangeCursorToDefault()
+        {
+            ChangeCursorTexture(textureCursorDefault);
+        }
     }
 }

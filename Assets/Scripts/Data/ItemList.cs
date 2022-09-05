@@ -1,12 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LSW.Gameplay;
 
-[CreateAssetMenu(menuName = "Data Containers/Item List", fileName = "Item List")]
-public class ItemList : ScriptableObject
+namespace LSW
 {
-    [SerializeField]
-    List<Item> itemList = new List<Item>();
+    [CreateAssetMenu(menuName = "Data Containers/Item List", fileName = "Item List")]
+    public class ItemList : ScriptableObject
+    {
+        [SerializeField]
+        List<Item> itemList = new List<Item>();
 
-    public List<Item> _ItemList { get => itemList; }
+        public List<Item> _ItemList { get => itemList; }
+    }
 }

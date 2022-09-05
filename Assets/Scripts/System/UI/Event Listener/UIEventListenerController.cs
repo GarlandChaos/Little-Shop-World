@@ -1,5 +1,6 @@
 using UnityEngine;
 using LSW.Events;
+using LSW.Gameplay;
 
 namespace LSW.UI
 {
@@ -15,6 +16,14 @@ namespace LSW.UI
         private void Start()
         {
             UIManager.instance.RequestScreen("Main Menu Screen", true);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+                UIManager.instance.RequestScreen("Inventory Screen");
+            else if (Input.GetKeyDown(KeyCode.Escape))
+                UIManager.instance.RequestScreen("Pause Screen");
         }
 
         public void ShowItemDetails(Item item, InfoType infoType)

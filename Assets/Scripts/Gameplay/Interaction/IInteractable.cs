@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IInteractable 
+namespace LSW.Gameplay
 {
-    void Interact();
-    void EnterInteractionArea();
-    void ExitInteractionArea();
+    public interface IInteractable
+    {
+        void Interact();
+        void EnterInteractionArea();
+        void ExitInteractionArea();
+    }
 }

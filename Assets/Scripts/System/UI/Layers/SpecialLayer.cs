@@ -6,7 +6,9 @@ namespace LSW.UI
     {
         public override void SaySize()
         {
+#if UNITY_EDITOR
             Debug.Log("Panel layer size is: " + screens.Count);
+#endif
             base.SaySize();
         }
     }

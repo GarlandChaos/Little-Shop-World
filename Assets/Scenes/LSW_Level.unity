@@ -681,7 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EventMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 96
   m_MaxRayIntersections: 0
 --- !u!1001 &601956408
 PrefabInstance:

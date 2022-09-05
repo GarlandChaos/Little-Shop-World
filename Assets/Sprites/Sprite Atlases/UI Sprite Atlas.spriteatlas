@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 1024
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ab7970d2145772346b5e7a885962849b, type: 3}
+    - {fileID: 102900000, guid: 420076e4546d39b4f8f85adbae13c259, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2125cf00d2b32a84294352299b805841, type: 3}
+  - {fileID: 21300000, guid: 2e9453b073f3d2840b9f7e5036128bd5, type: 3}
+  - {fileID: 21300000, guid: b259ccb06f86d4e4b86574dd1b1ec8f6, type: 3}
+  - {fileID: 21300000, guid: 619fccf01bc01e14dbceafe1f3e3b4b9, type: 3}
+  - {fileID: 21300000, guid: 272d04119b457d6499a5188f3eb59256, type: 3}
+  - {fileID: 21300000, guid: 256fec22a38e0c74da861383e7d885b5, type: 3}
+  - {fileID: 21300000, guid: 17f25f42c5003e141af4bef5649e7e47, type: 3}
+  - {fileID: 21300000, guid: 9f4a77526e69650459fd0ae04b6b6bae, type: 3}
+  - {fileID: 21300000, guid: 11971b233f8e7014eab416f234e2256e, type: 3}
+  - {fileID: 21300000, guid: 38e16c53de14c4845bd8bd1d82f8ebbf, type: 3}
+  - {fileID: 21300000, guid: cc80bf63775f8904bbdccf8bb1a84447, type: 3}
+  - {fileID: 21300000, guid: b9e750c7451b3ac4d855c821c8d7c949, type: 3}
+  - {fileID: 21300000, guid: 5cbf2a88b3d29ec448171e3b37affb39, type: 3}
+  - {fileID: 21300000, guid: f6a77079383065d4caab0a1e6df6124a, type: 3}
+  - {fileID: 21300000, guid: 4bc1beb95ae76e34b928bb357161e199, type: 3}
+  - {fileID: 21300000, guid: 93122f6c67e13d641889cfd0fe07e025, type: 3}
+  - {fileID: 21300000, guid: 9c8c9fac4ca8bc24a80a94116d94148c, type: 3}
+  - {fileID: 21300000, guid: 95073f2ed586de643a1b763a721165ab, type: 3}
+  - {fileID: 21300000, guid: 6f785d5e22601d743b904e802cdf2c2c, type: 3}
+  - {fileID: 21300000, guid: a2ab0dee155bceb4baf0b70487e88fd6, type: 3}
+  - {fileID: 21300000, guid: 6e6858af4c067f7419040a4aeecb8ab0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - item-pants-blue-13
+  - item-shirt-blue-12
+  - item-shirt-white-12
+  - item-shoes-red-14
+  - item-pants-black-13
+  - logo
+  - item-shoes-black-14
+  - ui-background-21-23
+  - ui-close-24
+  - button-pressed
+  - item-shirt-black-12
+  - button-normal
+  - item-sunglasses-15
+  - item-glasses-16
+  - ui-background-21
+  - item-shirt-red-12
+  - ui-background-description-24
+  - item-shirt-golden-12
+  - item-pants-brown-13
+  - item-shoes-golden-14
+  - button-selected
+  m_RenderDataMap: {}
+  m_Tag: UI Sprite Atlas
+  m_IsVariant: 0

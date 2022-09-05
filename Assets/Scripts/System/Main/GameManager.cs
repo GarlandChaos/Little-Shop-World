@@ -1,36 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using LSW.UI;
 
-public class GameManager : MonoBehaviour
+namespace LSW
 {
-    public static GameManager instance = null;
-
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
-    }
+        public static GameManager instance = null;
+        int startSceneIndex = 1;
 
-    private void Start()
-    {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
+        private void Awake()
         {
-            UIManager.instance.RequestScreen("Inventory Screen"); //provisório, precisa mandar um evento primeiro para o UI Event Listener abrir a tela.
+            if (instance == null)
+                instance = this;
+            else
+                Destroy(gameObject);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape))
+
+        private void Start()
         {
-            UIManager.instance.RequestScreen("Pause Screen"); //provisório, precisa mandar um evento primeiro para o UI Event Listener abrir a tela.
+            LoadScene(startSceneIndex);
+        }
+
+        private void LoadScene(int index)
+        {
+            int current = SceneManager.GetActiveScene().buildIndex;
+            if (index != current)
+                SceneManager.LoadScene(index, LoadSceneMode.Additive);
+            if (index > startSceneIndex)
+                SceneManager.UnloadSceneAsync(current);
         }
     }
 }

@@ -305,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 330.83, y: 0}
+  m_AnchoredPosition: {x: 407.82, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7436030354162273227
@@ -338,7 +338,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Programming: Bernardo Alvarez Braga
 
-    Art: Bruna da Silva Souza'
+    Art: Bruna da Silva Souza
+
+    Song:
+    When You''re Not Looking by Nathan Moore'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d7354ba7cbf0464a95521ea3fce3c25, type: 2}
   m_sharedMaterial: {fileID: -2030031915030745750, guid: 3d7354ba7cbf0464a95521ea3fce3c25, type: 2}
