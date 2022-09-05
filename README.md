@@ -15,4 +15,6 @@ Little Shop World is a game made for a technical test for a job.
 
 ## Development notes:<br>
 Unity version: 2021.3.2f1 LTS <br>
-<b>IMPORTANT:</b> When executing from editor, you must be in LSW_Managers scene.
+<b>IMPORTANT:</b> When executing from editor, you must be in LSW_Managers scene. <br>
+Development process PDF in Assets/Docs. <br>
+Build in Assets/Build. <br>
