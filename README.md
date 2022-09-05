@@ -13,6 +13,12 @@
 Buy, sell and equipe awesome clothes in Little Shop World! <br>
 Little Shop World is a game made for a technical test for a job.
 
+## Controls:<br>
+WASD/Arrows - Move <br>
+Left mouse button - Interact <br>
+E - Open inventory <br>
+ESC - Pause <br>
+
 ## Development notes:<br>
 Unity version: 2021.3.2f1 LTS <br>
 <b>IMPORTANT:</b> When executing from editor, you must be in LSW_Managers scene. <br>
